@@ -54,8 +54,8 @@ OPTIONS:
 ```bash
 $ python app.py
 ------------------------------------------------------------------------------------------
-Hardening-your-OSX v1.0.0 (jack)
-Download the latest copy of this tool at: https://github.com/dikien/Hardening-your-OSX 
+Enhance-Security-and-Privacy-of-your-OSX v1.0.0 (jack)
+Download the latest copy of this tool at: https://github.com/dikien/Enhance-Security-and-Privacy-of-your-OSX 
 ------------------------------------------------------------------------------------------
 
 
@@ -147,7 +147,9 @@ The next configuration check requires elevated privileges; you may be prompted f
 
 CHECK #38: Enable Set time and date automatically... PASSED!
 
-CHECK #39: Disable 'Wake for network access'... PASSED!
+CHECK #39: Disable 'Wake for network access'... FAILED!
+	Apply the following  fix? This will execute  this command:
+		'sudo pmset -a womp 0' [Y/n] n
 
 CHECK #40: Enable Secure Keyboard Entry in terminal.app... PASSED!
 
@@ -323,7 +325,7 @@ CHECK #118: All Google Chrome web browser profiles have disabled the Adobe Flash
 CHECK #119: Google Chrome is the default web browser.... PASSED!
 
 CHECK #120: OSX/Keydnap malware is not present.... PASSED!
-Wrote results to '~/Documents/Hardening-your-OSX_2016-11-21_20-51-03.log'.
+Wrote results to '~/Documents/Enhance-Security-and-Privacy-of-your-OSX_2016-11-22_08-07-42.log'.
 ==========================
 2 tests could not be automatically fixed, but manual instructions are available. Please manually remediate these problems and re-run the tool:
 TEST #65: Check Library folder for world writable files

@@ -60,7 +60,7 @@ def get_timestamp():
     timestamp = datetime.datetime.fromtimestamp(time.time()).strftime(timestamp_format)
     return timestamp
 
-const.LOG_FILE_NAME = 'Hardening-your-OSX_%s.log' % get_timestamp()
+const.LOG_FILE_NAME = 'Enhance-Security-and-Privacy-of-your-OSX_%s.log' % get_timestamp()
 const.LOG_FILE_LOC = const.DEFAULT_OUTPUT_LOCATION + const.LOG_FILE_NAME
 
 glob_check_num = 1
@@ -597,9 +597,9 @@ def is_match(regex, string, ignore_case=False):
 def _print_banner():
     banner = (("---------------------------------------------------------------"
                "---------------------------\n"
-               "%s%sHardening-your-OSX%s %s\n"
+               "%s%sEnhance-Security-and-Privacy-of-your-OSX%s %s\n"
                "Download the latest copy of this tool at: "
-               "https://github.com/dikien/Hardening-your-OSX \n"
+               "https://github.com/dikien/Enhance-Security-and-Privacy-of-your-OSX \n"
                "---------------------------------------------------------------"
                "---------------------------\n") %
               (const.COLORS['BOLD'], const.COLORS['OKBLUE'],
