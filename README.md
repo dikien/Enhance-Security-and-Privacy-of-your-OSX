@@ -25,7 +25,7 @@ Download this app using Git, GitHub Desktop, or the "download as zip" option off
 In the `Terminal` application, navigate to the directory that contains this app. You can use the `cd` command (see example below) to change directories. If you've downloaded the file to your "Downloads" directory, you might find the app here:
 
 ```bash
-cd ~/Downloads/Hardening-your-OSX
+cd ~/Downloads/Enhance-Security-and-Privacy-of-your-OSX
 ```
 
 Next run the app as follows:

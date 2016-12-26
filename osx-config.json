@@ -540,7 +540,7 @@
   },
   {
     "description": "The File Vault key is protected when going to standby mode.",
-    "confidence": "recommended",
+    "confidence": "required",
     "reference": "https://github.com/drduh/OS-X-Security-and-Privacy-Guide",
     "tests": [
       {
@@ -901,7 +901,7 @@
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxFailedLoginAttempts=100 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
+      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
     }
   },
   {
@@ -917,7 +917,7 @@
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxFailedLoginAttempts=100 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
+      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
     }
   },
   {
@@ -933,7 +933,7 @@
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxFailedLoginAttempts=100 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
+      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
     }
   },
   {
@@ -949,7 +949,39 @@
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxFailedLoginAttempts=100 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
+      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
+    }
+  },
+  {
+    "description": "Set a password using history",
+    "confidence": "required",
+    "reference": "https://benchmarks.cisecurity.org/tools2/osx/CIS_Apple_OSX_10.10_Benchmark_v1.0.0.pdf",
+    "tests": [
+      {
+        "type": "regex match",
+        "command": "pwpolicy -getglobalpolicy | tr \" \" \"\\n\" | grep usingHistory",
+        "command_pass": ".*usingHistory=5.*",
+        "case_sensitive": "false"
+      }
+    ],
+    "fix": {
+      "sudo_command": "sudo pwpolicy -setglobalpolicy \"usingHistory=5 maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
+    }
+  },
+  {
+    "description": "Password expiration period",
+    "confidence": "required",
+    "reference": "https://benchmarks.cisecurity.org/tools2/osx/CIS_Apple_OSX_10.10_Benchmark_v1.0.0.pdf",
+    "tests": [
+      {
+        "type": "regex match",
+        "command": "pwpolicy -getglobalpolicy | tr \" \" \"\\n\" | grep maxMinutesUntilChangePassword",
+        "command_pass": ".*maxMinutesUntilChangePassword=129600.*",
+        "case_sensitive": "false"
+      }
+    ],
+    "fix": {
+      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxMinutesUntilChangePassword=129600 usingHistory=5 maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
     }
   },
   {
@@ -960,12 +992,12 @@
       {
         "type": "regex match",
         "command": "pwpolicy -getglobalpolicy | tr \" \" \"\\n\" | grep maxFailedLoginAttempts",
-        "command_pass": ".*maxFailedLoginAttempts=100.*",
+        "command_pass": ".*maxFailedLoginAttempts=40.*",
         "case_sensitive": "false"
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxFailedLoginAttempts=100 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
+      "sudo_command": "sudo pwpolicy -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1\""
     }
   },
   {
