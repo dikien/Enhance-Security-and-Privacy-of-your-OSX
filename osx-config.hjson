@@ -1234,7 +1234,7 @@
         fix:
         {
             sudo_command:
-                sudo pwpolicy -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1"
+                sudo pwpolicy -n /Local/Default -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5"
         }
     },
 
@@ -1255,7 +1255,7 @@
         fix:
         {
             sudo_command:
-                sudo pwpolicy -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1"
+                sudo pwpolicy -n /Local/Default -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5"
         }
     },
 
@@ -1276,7 +1276,7 @@
         fix:
         {
             sudo_command:
-                sudo pwpolicy -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1"
+                sudo pwpolicy -n /Local/Default -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5"
         }
     },
 
@@ -1297,7 +1297,7 @@
         fix:
         {
             sudo_command:
-                sudo pwpolicy -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1"
+                sudo pwpolicy -n /Local/Default -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5"
         }
     },
 
@@ -1318,7 +1318,7 @@
         fix:
         {
             sudo_command:
-                sudo pwpolicy -setglobalpolicy "usingHistory=5 maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1"
+                sudo pwpolicy -n /Local/Default -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5"
         }
     },
 
@@ -1339,7 +1339,7 @@
         fix:
         {
             sudo_command:
-                sudo pwpolicy -setglobalpolicy "maxMinutesUntilChangePassword=129600 usingHistory=5 maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1"
+                sudo pwpolicy -n /Local/Default -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5"
         }
     },
 
@@ -1360,7 +1360,7 @@
         fix:
         {
             sudo_command:
-                sudo pwpolicy -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1"
+                sudo pwpolicy -n /Local/Default -setglobalpolicy "maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5"
         }
     },
 
@@ -2602,33 +2602,6 @@
         {
             command:
                 find ~/Library/Application\ Support/Google/Chrome -name "Preferences" -maxdepth 2 | xargs -I{} python ./scripts/chrome_defaults.py write '{}' profile.default_content_setting_values.ppapi_broker -int 2
-        }
-    },
-
-    {
-        //Chrome->Preferences->Show Advanced Settings->Passwords and forms->Enable Autofill to fill out web forms in a single click
-        description: "All Google Chrome web browser profiles prevent filling personal information into forms automatically."
-        confidence: "required"
-        tests:
-        [
-            {
-                type: "exact match"
-                command: chrome_is_installed
-                command_pass: 0
-                case_sensitive: false
-            },
-            {
-                type: "regex match"
-                command:
-                    find ~/Library/Application\ Support/Google/Chrome -name "Preferences" -maxdepth 2 | xargs -I{} python ./scripts/chrome_defaults.py read '{}' autofill.enabled
-                command_pass: "^(False\n?)+$"
-                case_sensitive: "false"
-            }
-        ]
-        fix:
-        {
-            command:
-                find ~/Library/Application\ Support/Google/Chrome -name "Preferences" -maxdepth 2 | xargs -I{} python ./scripts/chrome_defaults.py write '{}' autofill.enabled -bool false
         }
     },
 
