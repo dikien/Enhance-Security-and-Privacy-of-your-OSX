@@ -901,7 +901,7 @@
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5\""
+      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=259200 usingHistory=5\""
     }
   },
   {
@@ -917,7 +917,7 @@
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5\""
+      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=259200 usingHistory=5\""
     }
   },
   {
@@ -933,7 +933,7 @@
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5\""
+      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=259200 usingHistory=5\""
     }
   },
   {
@@ -949,7 +949,7 @@
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5\""
+      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=259200 usingHistory=5\""
     }
   },
   {
@@ -965,7 +965,7 @@
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5\""
+      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=259200 usingHistory=5\""
     }
   },
   {
@@ -976,12 +976,12 @@
       {
         "type": "regex match",
         "command": "pwpolicy -getglobalpolicy | tr \" \" \"\\n\" | grep maxMinutesUntilChangePassword",
-        "command_pass": ".*maxMinutesUntilChangePassword=129600.*",
+        "command_pass": ".*maxMinutesUntilChangePassword=259200.*",
         "case_sensitive": "false"
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5\""
+      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=259200 usingHistory=5\""
     }
   },
   {
@@ -997,7 +997,7 @@
       }
     ],
     "fix": {
-      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=129600 usingHistory=5\""
+      "sudo_command": "sudo pwpolicy -n /Local/Default -setglobalpolicy \"maxFailedLoginAttempts=40 minChars=10 requiresNumeric=1 requiresAlpha=1 requiresSymbol=1 maxMinutesUntilChangePassword=259200 usingHistory=5\""
     }
   },
   {
