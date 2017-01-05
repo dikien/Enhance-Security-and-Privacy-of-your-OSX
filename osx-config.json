@@ -540,7 +540,7 @@
   },
   {
     "description": "The File Vault key is protected when going to standby mode.",
-    "confidence": "required",
+    "confidence": "recommended",
     "reference": "https://github.com/drduh/OS-X-Security-and-Privacy-Guide",
     "tests": [
       {

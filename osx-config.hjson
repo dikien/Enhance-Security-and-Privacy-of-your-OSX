@@ -721,7 +721,7 @@
     {
         description: "The File Vault key is protected when going to standby mode."
         //Once this set of configurations is proven stable, this can be upgraded from "experimental" to "recommended". We may want to warn the user first that waking will be slower and require authenticating twice.
-        confidence: "required"
+        confidence: "recommended"
         reference: "https://github.com/drduh/OS-X-Security-and-Privacy-Guide"
         tests:
         [
